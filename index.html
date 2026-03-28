@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immanuel Christian Fellowship | Southampton</title>
+    <meta name="description"
+        content="A Christ-centered church family in Southampton, growing together in worship, prayer, and God's Word.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 1. Sticky Header -->
+    <header class="site-header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="images/logo ICF.png" alt="ICF Emblem" class="logo-emblem">
+                <div class="logo-text">
+                    ICF <span>Southampton</span>
+                </div>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#welcome">Welcome</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#faith">Faith</a></li>
+                    <li><a href="#childrens-ministry">Children</a></li>
+                    <li><a href="#special-meetings">Special Meetings</a></li>
+                    <li><a href="#lords-supper">Lord's Supper</a></li>
+                    <li><a href="#fasting-prayer">Fasting Prayer</a></li>
+                    <li><a href="#upcoming-meetings">Upcoming</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Real-time Ambient Background Layer -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <!-- Custom Magnetic Cursor -->
+    <div id="custom-cursor"></div>
+
+    <!-- 2. Full-screen Video Hero -->
+    <section id="hero" class="fullscreen-hero">
+        <video autoplay loop muted playsinline class="hero-video" poster="images/hero_bg_1773447522099.png">
+            <source src="images/intro_video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div id="particles-js" class="particles-container"></div>
+        <div class="hero-content" data-speed="0.8">
+            <h1 class="fade-up">Immanuel Christian<br>Fellowship</h1>
+            <p class="subtitle fade-up delay-1">Southampton</p>
+            <p class="tagline fade-up delay-2">A Christ-centered church family in Southampton, growing together in
+                worship, prayer, and God’s Word.</p>
+            <div class="cta-group fade-up delay-3">
+                <a href="#welcome" class="btn btn-primary">Join Us</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="scroll-indicator fade-up delay-4">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+
+        <!-- Sound Toggle Button -->
+        <button id="sound-toggle" class="sound-toggle fade-up delay-4" aria-label="Toggle Sound">
+            <span class="icon">🔇</span>
+        </button>
+    </section>
+
+    <!-- 3. Welcome Section -->
+    <section id="welcome" class="welcome-section">
+        <div class="container">
+            <div class="split-layout">
+                <div class="content reveal-slide-up stagger-1">
+                    <h2>Welcome Home.</h2>
+                    <p>Welcome to Immanuel Christian Fellowship. We are a bilingual church community where people of all
+                        ages can encounter God, grow in faith, and experience genuine fellowship.</p>
+                    <p>Whether you are visiting for the first time or looking for a church family, you are warmly
+                        invited to join us.</p>
+                </div>
+                <div class="visual reveal-scale stagger-2">
+                    <div class="image-wrapper glass-card parallax-wrap">
+                        <img src="images/welcome_bg_1773447535747.png" alt="Welcome to ICF" class="parallax-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3.5 Scrollytelling Sequence Section -->
+    <section id="sequence-section" class="sequence-section">
+        <div class="sequence-sticky-container">
+            <canvas id="sequence-canvas"></canvas>
+            <div class="sequence-overlay"></div>
+        </div>
+    </section>
+
+    <!-- 4. About Us -->
+    <section id="about" class="about-section" style="background-image: url('images/about_bg_1773447584646.png');">
+        <div class="section-overlay dark"></div>
+        <div class="container relative z-10 about-container">
+            <div class="about-content text-center">
+                <h2 class="about-heading serif-heading">Our Identity & Mission</h2>
+                
+                <div class="about-reveal-content">
+                    <div class="divider gold about-item"></div>
+                    <p class="lead-text about-item">Immanuel Christian Fellowship – Southampton is a Christ-centered church community
+                        committed to sharing the love of Jesus and building lives on the truth of God’s Word.</p>
+                    <p class="about-item">As a bilingual fellowship serving people in Malayalam and English, we aim to create a welcoming space
+                        where individuals and families can worship, pray, learn, and grow together in faith.</p>
+                    <div class="values-grid">
+                        <div class="value-item glass-card about-item">
+                            <span class="value-number">01</span>
+                            <h4>Mission</h4>
+                            <p>Sharing the love of Jesus and the truth of God's Word.</p>
+                        </div>
+                        <div class="value-item glass-card about-item">
+                            <span class="value-number">02</span>
+                            <h4>Vision</h4>
+                            <p>A thriving community walking in authentic faith.</p>
+                        </div>
+                        <div class="value-item glass-card about-item">
+                            <span class="value-number">03</span>
+                            <h4>Family</h4>
+                            <p>A welcoming space for all generations to grow together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-9. Horizontal Scroll Sections -->
+    <div id="horizontal-scroll-wrapper" class="horizontal-scroll-wrapper">
+        <div class="pin-wrap">
+            <!-- 5. Children's Ministry -->
+            <section id="childrens-ministry" class="horizontal-panel">
+                <div class="container">
+                    <div class="split-layout">
+                        <div class="content reveal-slide-up stagger-1">
+                            <span class="panel-tag">Ministry</span>
+                            <h2 class="split-text">Children's Ministry</h2>
+                            <p class="panel-desc">Joyful, safe, and faith-centered learning for the next generation.</p>
+                            <div class="feature-list">
+                                <span>Bible Learning</span> &bull; <span>Worship & Songs</span> &bull; <span>Prayer</span>
+                            </div>
+                        </div>
+                        <div class="visual reveal-mask-circle stagger-2">
+                            <div class="image-wrapper glass-card parallax-wrap">
+                                <img src="images/children_bg_1773447600078.png" alt="Children's Ministry" class="parallax-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Special Meetings -->
+            <section id="special-meetings" class="horizontal-panel">
+                <div class="container">
+                    <div class="split-layout">
+                        <div class="content reveal-slide-up stagger-1">
+                            <span class="panel-tag">Events</span>
+                            <h2 class="split-text">Special Meetings</h2>
+                            <p class="panel-desc">Times of renewal, worship nights, and profound fellowship.</p>
+                            <div class="feature-list">
+                                <span>Revival Meetings</span> &bull; <span>Worship Nights</span> &bull; <span>Guest
+                                    Speakers</span>
+                            </div>
+                        </div>
+                        <div class="visual reveal-mask-slant stagger-2">
+                            <div class="image-wrapper glass-card parallax-wrap">
+                                <img src="images/worship_bg_1773447548155.png" alt="Special Meetings" class="parallax-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Lord's Supper -->
+            <section id="lords-supper" class="horizontal-panel">
+                <div class="container">
+                    <div class="split-layout">
+                        <div class="content reveal-slide-up stagger-1">
+                            <span class="panel-tag">Sacrament</span>
+                            <h2 class="split-text">Lord's Supper</h2>
+                            <p class="panel-desc">A table of remembrance, reverence, and grace.</p>
+                            <div class="feature-list">
+                                <span>Sacrifice</span> &bull; <span>Reflection</span> &bull; <span>Communion</span>
+                            </div>
+                        </div>
+                        <div class="visual reveal-mask-circle stagger-2">
+                            <div class="image-wrapper glass-card parallax-wrap">
+                                <img src="images/lords_supper_bg_1773447563109.png" alt="Lord's Supper" class="parallax-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Fasting Prayer Meetings -->
+            <section id="fasting-prayer" class="horizontal-panel">
+                <div class="container">
+                    <div class="split-layout">
+                        <div class="content reveal-slide-up stagger-1">
+                            <span class="panel-tag">Gathering</span>
+                            <h2 class="split-text">Fasting Prayer</h2>
+                            <p class="panel-desc">Seeking intimacy with God through powerful, unified prayer.</p>
+                            <div class="feature-list">
+                                <span>Family Prayer</span> &bull; <span>Renewal</span> &bull; <span>Impact</span>
+                            </div>
+                        </div>
+                        <div class="visual reveal-mask-slant stagger-2">
+                            <div class="image-wrapper glass-card parallax-wrap">
+                                <img src="images/hero_bg_1773447522099.png" alt="Fasting Prayer" class="parallax-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Upcoming Meetings -->
+            <section id="upcoming-meetings" class="horizontal-panel">
+                <div class="container">
+                    <div class="split-layout">
+                        <div class="content">
+                            <span class="panel-tag">Schedule</span>
+                            <h2 class="split-text">Upcoming Meetings</h2>
+                            <div class="schedule-grid">
+                                <div class="schedule-card">
+                                    <h4>Sunday Worship</h4>
+                                    <p>10:00 AM</p>
+                                </div>
+                                <div class="schedule-card">
+                                    <h4>Midweek Prayer</h4>
+                                    <p>Wednesdays, 7:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="visual">
+                            <div class="image-wrapper glass-card">
+                                <img src="images/welcome_bg_1773447535747.png" alt="Upcoming Meetings">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- 9.2 Statement of Faith (Apple-inspired) -->
+    <section id="faith" class="faith-section" style="padding-top: 4rem;">
+        <div class="section-overlay dark"></div>
+        <div class="container relative z-10">
+            <div class="section-header text-center mb-5 reveal-slide-up">
+                <span class="category-tag">Truth</span>
+                <h2>Statement of Faith</h2>
+                <div class="header-line"></div>
+                <p>Rooted in God's Word, we hold these core truths as the foundation of our fellowship.</p>
+            </div>
+
+            <div class="faith-grid">
+                <!-- Word of God -->
+                <div class="faith-card glass-card">
+                    <div class="card-icon">📖</div>
+                    <h4>The Holy Scriptures</h4>
+                    <p>We believe the Bible is the inspired, only infallible, authoritative Word of God, our supreme rule for faith and conduct.</p>
+                </div>
+
+                <!-- Godhead -->
+                <div class="faith-card glass-card">
+                    <div class="card-icon">🕊️</div>
+                    <h4>The Eternal Godhead</h4>
+                    <p>We believe there is one God, eternally existent in three persons: Father, Son, and Holy Spirit.</p>
+                </div>
+
+                <!-- Jesus Christ -->
+                <div class="faith-card glass-card">
+                    <div class="card-icon">✝️</div>
+                    <h4>The Lord Jesus Christ</h4>
+                    <p>We believe in His deity, virgin birth, sinless life, miracles, atoning death, bodily resurrection, and personal return.</p>
+                </div>
+
+                <!-- Salvation -->
+                <div class="faith-card glass-card">
+                    <div class="card-icon">⚓</div>
+                    <h4>Salvation</h4>
+                    <p>We believe that for the salvation of lost and sinful people, regeneration by the Holy Spirit is absolutely essential.</p>
+                </div>
+
+                <!-- Holy Spirit -->
+                <div class="faith-card glass-card">
+                    <div class="card-icon">🔥</div>
+                    <h4>The Holy Spirit</h4>
+                    <p>We believe in the present ministry of the Holy Spirit, by whose indwelling the Christian is enabled to live a godly life.</p>
+                </div>
+
+                <!-- Unity -->
+                <div class="faith-card glass-card">
+                    <div class="card-icon">🤝</div>
+                    <h4>Unity of Believers</h4>
+                    <p>We believe in the spiritual unity of believers in our Lord Jesus Christ, across all borders and cultures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9.5 Recent Sermons & Media -->
+    <section id="media" class="media-section">
+        <div class="container">
+            <div class="section-header text-center mb-5 reveal-slide-up">
+                <span class="category-tag">Media</span>
+                <h2>Recent Sermons</h2>
+                <div class="header-line"></div>
+                <p>Catch up on our latest messages and stay connected with God's word wherever you are.</p>
+            </div>
+
+            <div class="video-gallery-container mt-5">
+                <div class="main-video-wrapper">
+                    <iframe id="main-youtube-player" src="https://www.youtube-nocookie.com/embed/oIe45Hm1aFU?rel=0&enablejsapi=1"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+
+                <div class="video-fallback-container text-center mt-3">
+                    <p class="small text-muted mb-2">Video not playing? Error 150/153?</p>
+                    <a id="youtube-fallback-link" href="https://www.youtube.com/watch?v=oIe45Hm1aFU" target="_blank" class="btn-fallback">
+                        <i class="icon">↗</i> Watch Directly on YouTube
+                    </a>
+                </div>
+
+                <div class="video-thumbnails-grid mt-4">
+                    <div class="thumbnail-item active reveal-scale stagger-1" data-video-id="oIe45Hm1aFU">
+                        <img src="https://img.youtube.com/vi/oIe45Hm1aFU/mqdefault.jpg" alt="2 Cor 4:7">
+                        <div class="thumbnail-overlay">
+                            <i class="play-icon">▶</i>
+                        </div>
+                    </div>
+                    <div class="thumbnail-item reveal-scale stagger-2" data-video-id="FF2HiZcOAAc">
+                        <img src="https://img.youtube.com/vi/FF2HiZcOAAc/mqdefault.jpg" alt="1 Samuel 16:7">
+                        <div class="thumbnail-overlay">
+                            <i class="play-icon">▶</i>
+                        </div>
+                    </div>
+                    <div class="thumbnail-item reveal-scale stagger-3" data-video-id="7APw9N652S4">
+                        <img src="https://img.youtube.com/vi/7APw9N652S4/mqdefault.jpg" alt="Matt 27:40">
+                        <div class="thumbnail-overlay">
+                            <i class="play-icon">▶</i>
+                        </div>
+                    </div>
+                    <div class="thumbnail-item reveal-scale stagger-4" data-video-id="LgNAIlaI3g4">
+                        <img src="https://img.youtube.com/vi/LgNAIlaI3g4/mqdefault.jpg" alt="Galatians 5:25">
+                        <div class="thumbnail-overlay">
+                            <i class="play-icon">▶</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Contact Us (Cinematic Apple Bento) -->
+    <section id="contact" class="contact-section">
+        <!-- The Fullscreen Animated Hero Card overlaying the background -->
+        <div class="contact-hero-card">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay-gradient"></div>
+            <!-- Large Typography shown when Fullscreen -->
+            <h1 class="hero-large-text">We're here for you.</h1>
+            
+            <!-- Small Tile Content shown when Shrunk -->
+            <div class="tile-content hero-small-content">
+                <div class="tile-icon">📍</div>
+                <h3>Visit Us</h3>
+                <p>Join our community for a service in Southampton. We can't wait to welcome you home.</p>
+                <p class="address-text">Southampton, United Kingdom</p>
+                <a href="https://maps.app.goo.gl/YourGoogleMapsLink" target="_blank" class="btn btn-outline btn-sm mt-3">Get Directions</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="section-header text-center mb-5 reveal-slide-up contact-header-text">
+                <span class="category-tag">Connect</span>
+                <p>Reach out to us through any of the channels below. We'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-bento-grid">
+                <!-- Location Tile (PLACEHOLDER for the Hero Card to shrink into) -->
+                <div class="bento-tile location-tile location-tile-placeholder">
+                    <!-- Invisible placeholder maintaining the grid shape -->
+                </div>
+
+                <!-- Phone Tile -->
+                <div class="bento-tile info-tile glass-card reveal-slide-up stagger-2">
+                    <div class="tile-icon">📞</div>
+                    <h4>Call Us</h4>
+                    <p class="info-text">+44 7908 676 335</p>
+                    <a href="tel:+447908676335" class="tile-link">Speak with us →</a>
+                </div>
+
+                <!-- Email Tile -->
+                <div class="bento-tile info-tile glass-card reveal-slide-up stagger-3">
+                    <div class="tile-icon">✉️</div>
+                    <h4>Email Us</h4>
+                    <p class="info-text">contact@immanuelfellowship.co.uk</p>
+                    <a href="mailto:contact@immanuelfellowship.co.uk" class="tile-link">Send a message →</a>
+                </div>
+
+                <!-- Social Tile -->
+                <div class="bento-tile social-tile glass-card reveal-slide-up stagger-4">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons-grid">
+                        <a href="#" class="social-icon-box" title="YouTube">
+                            <span class="icon">🎬</span>
+                            <span class="label">YouTube</span>
+                        </a>
+                        <a href="#" class="social-icon-box" title="Instagram">
+                            <span class="icon">📸</span>
+                            <span class="label">Instagram</span>
+                        </a>
+                        <a href="#" class="social-icon-box" title="Facebook">
+                            <span class="icon">👥</span>
+                            <span class="label">Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Footer (Sleek Multi-column) -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Column 1: Brand -->
+                    <div class="footer-col brand-col reveal-slide-up stagger-1">
+                        <div class="footer-logo">
+                            <h3>ICF <span>Southampton</span></h3>
+                        </div>
+                        <p class="footer-mission">A Christ-centered church community building lives on the eternal truth of God's Word. Join us as we grow together in faith and love.</p>
+                    </div>
+
+                    <!-- Column 2: Resources -->
+                    <div class="footer-col links-col reveal-slide-up stagger-2">
+                        <h4>Resources</h4>
+                        <ul class="footer-links-list">
+                            <li><a href="#welcome">Welcome</a></li>
+                            <li><a href="#about">About ICF</a></li>
+                            <li><a href="#faith">Our Faith</a></li>
+                            <li><a href="#horizontal-scroll-wrapper">Ministries</a></li>
+                            <li><a href="#media">Sermons</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Visit -->
+                    <div class="footer-col visit-col reveal-slide-up stagger-3">
+                        <h4>Visit Us</h4>
+                        <div class="footer-info-item">
+                            <h5>Service Times</h5>
+                            <p>Sundays at 10:30 AM</p>
+                            <p>Wednesdays at 7:30 PM (Online)</p>
+                        </div>
+                        <div class="footer-info-item mt-3">
+                            <h5>Location</h5>
+                            <p>Southampton, UK</p>
+                            <a href="#contact" class="text-link">View Map →</a>
+                        </div>
+                    </div>
+
+                    <!-- Column 4: Connect -->
+                    <div class="footer-col connect-col reveal-slide-up stagger-4">
+                        <h4>Connect</h4>
+                        <ul class="footer-social-list">
+                            <li>
+                                <a href="#" class="social-footer-link">
+                                    <span class="icon">🎬</span> YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="social-footer-link">
+                                    <span class="icon">📸</span> Instagram
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="social-footer-link">
+                                    <span class="icon">👥</span> Facebook
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="footer-cta mt-4">
+                            <a href="tel:+447908676335" class="footer-phone-cta">+44 7908 676 335</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container split-bottom">
+                <p class="copyright">&copy; 2026 Immanuel Christian Fellowship – Southampton. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll (Lenis) -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- GSAP & Plugins for smooth scrolling and animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
