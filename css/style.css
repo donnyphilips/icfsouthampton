@@ -101,7 +101,7 @@ img {
 
 /* Custom Magnetic Cursor */
 #custom-cursor {
-    position: fixed;
+    /*position: fixed;
     top: 0;
     left: 0;
     width: 20px;
@@ -115,17 +115,20 @@ img {
     will-change: transform, width, height;
     transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
                 height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                background-color 0.3s ease;
+                background-color 0.3s ease; */
+
+    display: none; /* Hide by default, show on desktop via JS */    
 }
 
-/* Hide default cursor globally, keep interaction */
 html, body {
-    cursor: none;
+    /*cursor: none; */
+    cursor: default;
 }
 
 /* Interactive elements default to no cursor (we handle it manually) */
 a, button, .thumbnail-item, .glass-card {
-    cursor: none;
+    /*cursor: none;*/
+    cursor: pointer;
 }
 
 /* Kinetic Typography Utility Wrappers */
@@ -401,7 +404,7 @@ a, button, .thumbnail-item, .glass-card {
 /* Removed hover reveal logic for always-visible menu */
 
 .nav-links li a {
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2.5px;
