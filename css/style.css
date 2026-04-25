@@ -796,14 +796,14 @@ a, button, .thumbnail-item, .glass-card {
 }
 
 .values-grid {
-    /*display: grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 4rem; */
-    display: flex;
+    margin-top: 4rem; 
+    /*display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
+    align-items: center; */
 }
 
 @media (max-width: 768px) {
