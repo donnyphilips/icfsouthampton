@@ -1839,3 +1839,75 @@ a, button, .thumbnail-item, .glass-card {
     margin-left: auto;
     margin-right: auto;
 }
+.map-tile {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 0;
+    min-height: 520px;
+    overflow: hidden;
+}
+
+    .map-tile iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: 0;
+    }
+
+.visit-socials {
+    margin-top: 1.5rem;
+}
+
+.hero-small-content a {
+    color: var(--clr-gold);
+}
+
+.hero-small-content .btn {
+    color: var(--clr-white);
+}
+
+.hero-small-content .address-text {
+    color: var(--clr-white) !important;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .map-tile {
+        grid-column: span 1;
+        min-height: 350px;
+    }
+}
+.hero-small-content {
+    pointer-events: auto !important;
+}
+
+
+.visit-socials .social-icon-box {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.visit-socials .social-icon-box i {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Official brand colours */
+.visit-socials .social-icon-box.youtube i {
+    color: #FF0000;
+}
+
+.visit-socials .social-icon-box.instagram i {
+    color: #E4405F;
+}
+
+.visit-socials .social-icon-box.facebook i {
+    color: #1877F2;
+}
+
+.visit-socials .social-icon-box:hover i {
+transform: scale(1.15);
+}
