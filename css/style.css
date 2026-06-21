@@ -743,109 +743,105 @@ a, button, .thumbnail-item, .glass-card {
 /* =========================================
    3. About Us Section
 ========================================= */
-.about-section {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 10; /* Sits above horizontal section for curtain-peel wipe */
-}
+/* Sticky Split Story Sections with Left/Right Swap */
 
-.section-overlay.dark {
-    position: absolute;
-    inset: 0;
-    background: rgba(5, 5, 5, 0.85);
-    z-index: 1;
-}
-
-.about-container {
-    padding: 6rem 0;
-    width: 100%;
-}
-
-.about-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.serif-heading {
-    font-family: var(--font-heading);
-    color: var(--clr-gold);
-    font-size: clamp(3rem, 7vw, 5rem);
-    margin-bottom: 0;
-    will-change: transform, opacity;
-}
-
-.about-reveal-content {
-    opacity: 0;
-    pointer-events: none;
-    will-change: transform, opacity;
-}
-
-.about-content .lead-text {
-    font-size: 1.5rem;
-    font-family: var(--font-heading);
-    font-style: italic;
-    color: var(--clr-gold-light);
-    margin-bottom: 2rem;
-}
-
-.values-grid {
+.sticky-story-section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 4rem; 
-    /*display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center; */
+    grid-template-columns: 50% 50%;
+    min-height: 120vh;
+    background: var(--clr-black);
+    color: var(--clr-white);
 }
+
+    .sticky-story-section.reverse .sticky-story-image {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .sticky-story-section.reverse .sticky-story-content {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+.sticky-story-image {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+    .sticky-story-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.sticky-story-content {
+    min-height: 120vh;
+    padding: 8rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .sticky-story-content .category-tag {
+        color: var(--clr-gold-light);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .sticky-story-content h2 {
+        color: var(--clr-gold);
+        font-size: clamp(2.5rem, 4.8vw, 4.2rem);
+        margin-bottom: 2rem;
+    }
+
+    .sticky-story-content p {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.88);
+        margin-bottom: 1.5rem;
+        max-width: 650px;
+    }
 
 @media (max-width: 768px) {
-    .values-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .sticky-story-section {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
     }
+
+        .sticky-story-section.reverse .sticky-story-image,
+        .sticky-story-section.reverse .sticky-story-content {
+            grid-column: auto;
+            grid-row: auto;
+        }
+
+    .sticky-story-image {
+        position: relative;
+        height: 45vh;
+    }
+
+    .sticky-story-content {
+        min-height: auto;
+        padding: 4rem 1.5rem;
+    }
+
+        .sticky-story-content h2 {
+            font-size: 2.4rem;
+        }
+
+        .sticky-story-content p {
+            font-size: 1rem;
+        }
 }
 
-.value-item {
-    text-align: left;
-    padding: 2rem;
-    background: var(--glass-bg);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    transition: background 0.3s ease, border-color 0.3s ease;
-    will-change: transform, opacity;
+.sticky-story-image img {
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.value-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(212, 175, 55, 0.3);
-}
-
-.value-number {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    color: var(--clr-gold);
-    opacity: 0.5;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.value-item h4 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
-.value-item p {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
-}
 
 /* =========================================
    4. Horizontal Scroll Container
@@ -1001,76 +997,68 @@ a, button, .thumbnail-item, .glass-card {
 /* =========================================
    9.2 Statement of Faith Section
 ========================================= */
+/* =========================================
+   Statement of Faith Cards
+========================================= */
 .faith-section {
-    padding: 10rem 2rem;
-    position: relative;
-    background: url('../images/faith_bg.png') center/cover no-repeat;
-    background-color: var(--clr-navy);
+    padding: 8rem 2rem;
+    background: linear-gradient(135deg, rgba(5,5,5,0.95), rgba(10,17,40,0.98)), url('../images/faith_bg.png') center/cover no-repeat;
     background-attachment: fixed;
-    overflow: hidden;
 }
 
 .faith-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-top: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
 }
 
 .faith-card {
-    padding: 3rem 2rem;
-    text-align: center;
-    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    padding: 2rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
 }
 
-.faith-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--clr-gold);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
-}
+    .faith-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--clr-gold);
+        background: rgba(255,255,255,0.09);
+    }
 
-.card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-}
-
-.faith-card h4 {
-    font-size: 1.4rem;
+.faith-icon {
+    font-size: 2.2rem;
     color: var(--clr-gold);
     margin-bottom: 1rem;
-    font-family: var(--font-heading);
+}
+
+.faith-card h3 {
+    color: var(--clr-gold);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 
 .faith-card p {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255,255,255,0.85);
     line-height: 1.7;
+    font-size: 0.98rem;
 }
 
-@media (max-width: 1024px) {
-    .faith-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.faith-card small {
+    display: block;
+    margin-top: 1rem;
+    color: var(--clr-gold-light);
+    font-style: italic;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
-    .faith-section {
-        padding: 6rem 1.5rem;
-    }
     .faith-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .faith-card {
-        padding: 2.5rem 1.5rem;
     }
 }
-
 /* =========================================
    9.5 Recent Sermons & Media
 ========================================= */
@@ -1272,6 +1260,58 @@ a, button, .thumbnail-item, .glass-card {
     background: transparent;
     border: none;
     box-shadow: none;
+}
+/* Contact Details */
+
+.contact-details {
+    margin-top: 1.5rem;
+}
+
+    .contact-details p {
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-details i {
+        color: var(--clr-gold);
+        min-width: 20px;
+    }
+
+    .contact-details a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+        .contact-details a:hover {
+            color: var(--clr-gold);
+        }
+
+/* Visit Us Mobile Improvements */
+
+@media (max-width: 768px) {
+
+    .hero-small-content {
+        padding-top: 2rem;
+    }
+
+    .visit-socials {
+        margin-top: 2rem;
+    }
+
+    .hero-small-content iframe {
+        height: 220px;
+        margin-top: 1rem;
+    }
+
+    .social-icons-grid {
+        gap: 0.75rem;
+    }
+
+    .social-icon-box {
+        min-height: 80px;
+    }
 }
 
 /* =========================================
