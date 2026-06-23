@@ -874,6 +874,13 @@ a, button, .thumbnail-item, .glass-card {
     padding: 0 4rem;
     flex-shrink: 0;
 }
+.horizontal-panel .content p {
+    color: var(--clr-navy-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 620px;
+}
 
 @media (max-width: 768px) {
     .horizontal-panel {
@@ -895,7 +902,7 @@ a, button, .thumbnail-item, .glass-card {
 }
 
 .horizontal-panel h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
     margin-bottom: 1rem;
     color: var(--clr-navy);
     text-shadow: none; /* Remove shadow for white theme */
