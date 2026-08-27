@@ -895,6 +895,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     };
 
+    // if (document.getElementById("sequence-section") && window.matchMedia("(min-width: 769px)").matches) {
     if (document.getElementById("sequence-section")) {
         initSequence();
     }

@@ -1600,6 +1600,14 @@ a, button, .thumbnail-item, .glass-card {
     z-index: 3;
 }
 
+/*
+@media (max-width: 768px) {
+    .sequence-section {
+        display: none;
+    }
+}
+*/
+
 /* =========================================
    4. About Us
 ========================================= */
