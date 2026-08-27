@@ -231,14 +231,6 @@ a, button, .thumbnail-item, .glass-card {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     border-radius: 8px;
-    box-shadow: var(--glass-shadow);
-}
-
-/* =========================================
-   Premium Animation Utility Classes
-========================================= */
-.reveal-fade {
-    opacity: 0;
     transition: var(--transition-premium);
 }
 

@@ -631,45 +631,41 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    /*
     // 8. Statement of Faith Puzzle Animation
     const faithSection = document.querySelector('.faith-section');
     if (faithSection) {
         const puzzleCards = gsap.utils.toArray('.faith-section .faith-card');
-        
-        // Define distinct puzzle piece entry coordinates
+
         const puzzleStarts = [
-            { x: -300, y: -200, rotation: -45 }, // Top Left -> coming from top-left
-            { x: 0, y: -300, rotation: 25 },    // Top Center -> coming from top
-            { x: 300, y: -200, rotation: 45 },  // Top Right -> coming from top-right
-            { x: -300, y: 200, rotation: -30 }, // Bottom Left -> coming from bottom-left
-            { x: 0, y: 300, rotation: -20 },    // Bottom Center -> coming from bottom
-            { x: 300, y: 200, rotation: 30 }    // Bottom Right -> coming from bottom-right
+            { x: -300, y: -200, rotation: -45 },
+            { x: 0, y: -300, rotation: 25 },
+            { x: 300, y: -200, rotation: 45 },
+            { x: -300, y: 200, rotation: -30 },
+            { x: 0, y: 300, rotation: -20 },
+            { x: 300, y: 200, rotation: 30 }
         ];
 
-        // Create a timeline linked to scroll
         const puzzleTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".faith-grid",
                 start: "top 90%",
                 end: "center 55%",
-                scrub: 1.5, // 1.5s smoothing effect on scroll
+                scrub: 1.5
             }
         });
 
-        // Loop through cards and animate them from their puzzle positions
         puzzleCards.forEach((card, i) => {
             const startNode = puzzleStarts[i % puzzleStarts.length];
-            
-            // Set initial puzzle scattered state
+
             gsap.set(card, {
                 x: startNode.x,
                 y: startNode.y,
-                rotationZ: startNode.rotation, // explicit Z rotation for performance
+                rotationZ: startNode.rotation,
                 opacity: 0,
                 scale: 0.8
             });
-            
-            // Slide into grid position like a puzzle
+
             puzzleTl.to(card, {
                 x: 0,
                 y: 0,
@@ -678,11 +674,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 scale: 1,
                 duration: 1,
                 ease: "power2.out"
-            }, 0); // All start at time 0 to snap together simultaneously
+            }, 0);
         });
     }
+    */
 
-    // 9. About Section Apple-Style Scroll Storytelling
+    // 8. About Section Apple-Style Scroll Storytelling
     const aboutSection = document.querySelector('.about-section');
     const aboutHeading = document.querySelector('.about-heading');
     const aboutReveal = document.querySelector('.about-reveal-content');
