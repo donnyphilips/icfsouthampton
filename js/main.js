@@ -433,6 +433,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         const scrollPos = st.start + (st.end - st.start) * horizontalProgress;
                         
                         lenis.scrollTo(scrollPos, { duration: 1.5 });
+                    } else if (targetId === '#contact') {
+                        const contactReveal = ScrollTrigger.getById('contact-reveal');
+                        lenis.scrollTo(contactReveal ? contactReveal.end : targetElement, { duration: 1.5 });
                     } else {
                         lenis.scrollTo(targetElement, { duration: 1.5 });
                     }
@@ -755,6 +758,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Create pinned timeline
             let contactTl = gsap.timeline({
                 scrollTrigger: {
+                    id: 'contact-reveal',
                     trigger: contactSection,
                     start: "top top", // Pin immediately upon reaching the section
                     end: "+=150%", // Scrub distance

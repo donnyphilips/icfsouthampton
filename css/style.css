@@ -500,12 +500,6 @@ a, button, .thumbnail-item, .glass-card {
         display: block !important;
     }
 
-    .site-header:hover .nav-links {
-        /* Kill any desktop hover behavior on mobile */
-        transform: inherit !important;
-        opacity: inherit !important;
-        pointer-events: inherit !important;
-    }
 }
 
 /* =========================================
